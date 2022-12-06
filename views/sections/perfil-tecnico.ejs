@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Untree.co">
+    <link rel="shortcut icon" href="../images/logo2.png">  
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap4" />  
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="../css/tiny-slider.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/heroes.css" rel="stylesheet">      
+    <link href="../css/estilospropios.css" rel="stylesheet">      
+    <!--Perfil tecnico-->
+    <link href="../css/main.css" rel="stylesheet">      
+    <link href="../css/aos.css" rel="stylesheet">      
+    <!--Perfil tecnico-->
+    <title>SOLUW</title>
+  </head> 
+ 
+ <div class="row">   
+    <div class="container">   
+        <div class="page-header page-header-small" filter-color="green">
+          <div class="page-header-image" data-parallax="true" style="background-image: url('images/cc-bg-1.jpg')"></div>
+          <div class="container">
+            <div class="content-center">
+              <ul class="list-unstyled">
+                <ul class="list-unstyled">
+                  <% if(tecnico){ %> 
+                    <input id="id" name="id" value="<%=tecnico.idUsuario%>" hidden>
+                    <div class="cc-profile-image"><img src="../images/<%=tecnico.foto%>" class="img-fluid product-thumbnail"></div>
+                    <div class="h2 title"><%=tecnico.nombre%> <%=tecnico.apellido%></div>
+                    <strong><p class="h4 text-white"><%=tecnico.nombreEspecializacion%></p></strong>
+                    <h2 class="h5 product-price">Valoración: <%=tecnico.valoracion%></h2>
+                    <h3 class="h5 product-price">Telefono: <%=tecnico.numTelefono%></h3>
+                <% } %>
+                </ul>
+            </div> 
+          </div> 
+        </div>     
+    </div>
+  </div>
+
+  <div class="b-example-divider"></div>
+  
+  <p></p>
+        <div class="container">
+          <div class="row">                    
+            <!-- Start Column 1 -->
+            <% results.forEach((servicio)=>{ %> 
+              <div class="col-12 col-md-4 col-lg-3 mb-5 position-relative">
+                <a class="product-item" href="/formularioServicio/<%= servicio.idServicoTecnico %>">
+                  <img src="../images/<%=servicio.imagen%>" class="img-fluid product-thumbnail">
+                  <h3 class="product-title"><%=servicio.nombreServicio%></h3>
+                  <h3 class="product-title">Ofrecido por: <%=servicio.nombre%> <%=servicio.apellido%></h3>
+                  <strong class="producto-price"><%=servicio.nombreEspecializacion%></strong><br>
+                  <strong class="product-price">$<%=servicio.precioServicio%></strong>
+                  <span class="icon-cross">
+                    <img src="../images/cross.svg" class="img-fluid">
+                  </span>
+                </a>
+              </div> 
+              <% }) %>
+            <!-- End Column 1 -->
+          </div>
+          <br><br>
+
+        </div>
+	<div class="b-example-divider"></div>
+	</div>
+	</div>
+
+</html>
+

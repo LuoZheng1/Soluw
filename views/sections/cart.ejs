@@ -1,0 +1,149 @@
+<!-- /*
+* Bootstrap 5
+* Template Name: Furni
+* Template Author: Untree.co
+* Template URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/ -->
+
+<!-- Start Hero Section -->
+<div class="hero">
+	<div class="container">
+		<div class="row justify-content-between">
+			<div class="col-lg-5">
+				<div class="intro-excerpt">
+					<h1>Carrito de Compras</h1>
+				</div>
+			</div>
+			<div class="col-lg-7">
+				
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Hero Section -->
+
+
+<% let total=0; %> 
+<% if (carrito) { %>
+	<div class="untree_co-section before-footer-section">
+		<div class="container">
+			<div class="row mb-5">
+			<form class="col-md-12" method="post">
+				<div class="site-blocks-table">
+				<table class="table">
+					<thead>
+					<tr>
+						<th class="product-name">Producto</th>
+						<th class="product-price">Precio</th>
+						<th class="product-total">Tecnico</th>
+						<th class="product-remove">Fecha</th>
+						<th class="product-remove">Eliminar</th>
+					</tr>
+					</thead>
+					<tbody>
+					<% carrito.forEach((car) => { %>
+						<% total = total+car.precioServicio %> 
+						<tr>
+							<td class="product-name"><%= car.nombreServicio %></td>
+							<td>$<%= car.precioServicio %></td>
+							<td><%= car.nombreTecnico %></td>
+							<td><%= car.fechaAccion %></td>
+							<td><a class="btn btn-white-outline" href="/eliminar/<%=car.idOrden%>">Eliminar</a></td>
+						</tr>
+					<% }) %>
+					</tbody>
+				</table>
+				</div>
+			</form>
+			</div>
+		
+			<div class="row">
+			<div class="col-md-6">
+				<div class="row mb-5">
+				<div class="col-md-6 mb-3 mb-md-0">
+					<a href="/cart" class="btn btn-black btn-sm btn-block">Actualizar Carrito</a>
+				</div>
+				<div class="col-md-6">
+					<a href="/Servicios" class="btn btn-outline-black btn-sm btn-block">Contiuar Comprando</a>
+				</div>
+				</div>
+				<div class="row">
+				<div class="col-md-12">
+					<label class="text-black h4" for="coupon">Cupón</label>
+					<p>Ingrese un cupón si tiene uno.</p>
+				</div>
+				<div class="col-md-8 mb-3 mb-md-0">
+					<input type="text" class="form-control py-3" id="coupon" placeholder="Codigo Cupon">
+				</div>
+				<div class="col-md-4">
+					<button class="btn btn-black">Aplicar Cupón</button>
+				</div>
+				</div>
+			</div>
+			<div class="col-md-6 pl-5">
+				<div class="row justify-content-end">
+				<div class="col-md-7">
+					<div class="row">
+					<div class="col-md-12 text-right border-bottom mb-5">
+						<h3 class="text-black h4 text-uppercase">Total de Carrito</h3>
+					</div>
+					</div>
+					<div class="row mb-3">
+						<div class="col-md-6">
+							<span class="text-black">Subtotal</span>
+						</div>
+						<div class="col-md-6 text-right">
+							<strong class="text-black">$<%= total.toFixed(2) %></strong>
+						</div>
+					</div>
+
+					<div class="row mb-5">
+						<div class="col-md-6">
+							<span class="text-black">Tarifa de Transaccion</span>
+						</div>
+						<% tarifa =0; tarifa=total*0.1 %>
+						<div class="col-md-6 text-right">
+							<strong class="text-black">$<%= tarifa.toFixed(2) %></strong>
+						</div>
+					</div>
+
+					<div class="row mb-5">
+						<% total = total*1.1 %>
+						<div class="col-md-6">
+							<span class="text-black">Total</span>
+						</div>
+						<div class="col-md-6 text-right">
+							<strong class="text-black">$<%= total.toFixed(2) %></strong>
+						</div>
+					</div>
+		
+					<div class="row">
+					<div class="col-md-12">
+						<button class="btn btn-black btn-lg py-3 btn-block" id="checkout">Proceder A Pagar</button>
+					</div>
+					</div>
+					<%total = total.toFixed(2);%>
+					<script>
+						
+						const checkout = document.getElementById('checkout')
+		
+						checkout.addEventListener('click', async function(){
+							const response = await fetch('crear-orden/<%= total %>', {
+								method: 'POST',
+							})
+							const data = await response.json() 
+							console.log(data);
+		
+							window.location.href = data.links[1].href
+						})
+						
+					</script>
+				</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		</div>
+<% } %>
+

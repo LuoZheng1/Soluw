@@ -1,0 +1,54 @@
+<div class="hero">
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col-lg-5">
+        <div class="intro-excerpt">
+          <h1>Lista de Técnicos</h1>
+          <h4 class="mb-4">Tenemos técnicos profesionales capaces para cualquier trabajo</h4>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="hero-img-wrap">
+          <img src="images/handy2.jpg" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Hero Section -->
+
+<div class="b-example-divider"></div>
+
+<input type="text" class="buscador" name="buscador" id="buscador" placeholder="Buscar...">
+
+<div class="untree_co-section product-section before-footer-section">
+  <div class="container">
+      <div class="row">
+        <!-- Start Column 1 -->
+            <% tecnicos.forEach((tecnicos)=>{ %> 
+            <div class="col-12 col-md-4 col-lg-3 mb-5">            
+              <section class="secciontec">   
+                <ul class="list-unstyled listaArticulos">
+                  <li class="articulo">
+                    <a href="/perfil-tecnico/<%= tecnicos.idUsuario %>" class="product-item">     
+                      <img src="images/<%=tecnicos.foto%>" class="img-fluid product-thumbnail">
+                      <h3 class="product-title"><%=tecnicos.nombre%> <%=tecnicos.apellido%></h3>
+                      <strong class="producto-price"><%=tecnicos.nombreEspecializacion%></strong><br>
+                      <strong class="product-price">Valoracion: <%=tecnicos.valoracion%></strong>
+                      <span class="icon-cross">
+                        <img src="images/OjoPerfil.png" class="img-fluid">
+                      </span>
+                    </a>    
+                  </li> 
+                </ul>
+              </section>      
+            </div> 
+            <% }) %>
+        <!-- End Column 1 -->
+      </div>
+  </div>
+</div>
+
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/buscador.js"></script>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Untree.co">
+    <link rel="shortcut icon" href="images/logo2.png">  
+    <meta name="description" content=""/>
+    <meta name="keywords" content="bootstrap, bootstrap4"/>  
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="css/tiny-slider.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/heroes.css" rel="stylesheet">      
+    <link href="css/estilospropios.css" rel="stylesheet">      
+    <!--Perfil tecnico-->
+    <link href="css/main.css" rel="stylesheet">      
+    <link href="css/aos.css" rel="stylesheet">      
+    <!--Perfil tecnico-->
+    <title>SOLUW</title>
+  </head>
+
+  <body>
+
+    <%- include ('sections/menu') %> <!-- se incluye el menú -->
+
+    <!-- se incluye el contenido dependiendo de la opción del menú -->
+    <% switch(pagina) {
+      case 1: %>
+    <%- include ('sections/pagina-principal',{results:results, tecnico:tecnico}) %>
+    <% break
+      case 2: %>
+    <%- include ('sections/servicios',{results:results}) %>
+    <% break
+      case 3: %>
+    <%- include ('sections/tecnicos',{tecnicos:tecnicos}) %>
+    <% break
+      case 4: %>
+    <%- include ('sections/preguntas') %>
+    <% break
+      case 5: %>
+    <%- include ('sections/contactenos') %>
+    <% break
+    case 6: %>
+    <%- include ('sections/cart',{carrito:carrito}) %>
+    <% break
+    case 7: %>
+    <%- include ('sections/login',{result,result}) %>
+    <% break
+    case 8: %>
+    <%- include ('sections/politicas') %>
+    <% break
+    case 9: %>
+    <%- include ('sections/registrarse') %>
+    <% break
+    case 10: %>
+    <%- include ('sections/perfil-tecnico',{results:results, tecnico:tecnico}) %>
+    <% break
+    case 11: %>
+    <%- include ('sections/formularioServicio',{results:results}) %>
+    <% break
+    case 12: %>
+    <%- include ('sections/thankyou') %>
+    <% break
+    case 13: %>
+    <%- include ('sections/historial',{results:results}) %>
+    <% break
+    
+    default: %>
+    <%- include ('sections/404') %>
+    <% break  } %>
+    
+  
+    <!-- Footer -->
+    <%- include ('sections/footer') %> 
+		<!-- End Footer Section -->	
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="jquery/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

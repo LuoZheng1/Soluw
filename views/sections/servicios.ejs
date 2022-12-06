@@ -1,0 +1,57 @@
+    <body>
+
+      <!-- Start Hero Section -->
+        <div class="hero">
+          <div class="container">
+            <div class="row justify-content-between">
+              <div class="col-lg-5">
+                <div class="intro-excerpt">
+                  <h1>Servicios</h1>
+                  <h4 class="mb-4">¡Explora nuestros servicios, ofrecemos soluciones para todo!</h4>
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="hero-img-wrap">
+                  <img src="images/mantenimiento2.jpg" class="img-fluid ">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- End Hero Section -->
+
+      <div class="b-example-divider"></div>
+      
+      <input type="text" class="buscador" name="buscador" id="buscador" placeholder="Buscar...">
+      <!-- Start Product Section -->
+      <div class="untree_co-section product-section before-footer-section">
+          <div class="container">
+            <div class="row">
+              <!-- Start Column 1 -->
+              <% results.forEach((servicio)=>{ %> 
+              <div class="col-12 col-md-4 col-lg-3 mb-5 position-relative">
+                <a class="product-item" href="/formularioServicio/<%= servicio.idServicoTecnico %>">
+                  <img src="images/<%=servicio.imagen%>" class="img-fluid product-thumbnail">
+                  <h3 class="product-title"><%=servicio.nombreServicio%></h3>
+                  <h3 class="product-title">Ofrecido por: <%=servicio.nombre%> <%=servicio.apellido%></h3>
+                  <strong class="producto-price"><%=servicio.nombreEspecializacion%></strong><br>
+                  <strong class="product-price">$<%=servicio.precioServicio%></strong>
+                  <span class="icon-cross">
+                    <img src="images/cross.svg" class="img-fluid">
+                  </span>
+                </a>
+              </div> 
+              <% }) %>
+              <!-- End Column 1 -->
+            </div>
+            <br><br>
+          </div>
+      </div>
+      <!-- End Product Section -->
+  
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/tiny-slider.js"></script>
+      <script src="js/custom.js"></script>
+    </body>
+  
+  
