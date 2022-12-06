@@ -1,0 +1,148 @@
+/*Pagina de Iniciar sesión*/
+.centrear{
+    display: grid;
+    place-items: center;
+}
+.alinear{
+  text-align: center;
+}
+
+/*Página de Contactenos*/
+.justificar{
+    text-align: justify;
+}
+
+.imgcentreada{
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.titulos{
+    font-family: 'Roboto', sans-serif;
+    color: #063b4d;
+    text-align: center;
+}
+
+
+.user-boxs {
+    position: relative;
+  }
+  
+  .user-boxs input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #454545;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 2px solid #454545;
+    outline: none;
+    background: transparent;
+  }
+  
+  .user-boxs select {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #454545;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 2px solid #454545;
+    outline: none;
+    background: transparent;
+  }
+  
+  .user-boxs select:hover {
+    background-color: #063b4d;
+    color: white;
+    opacity: 0.5;
+  }
+  
+  .user-boxs option {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    margin-bottom: 30px;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  
+  .user-boxs option:hover{
+    background-color: #063b4d;
+    color: white;
+    opacity: 0.5;
+  }
+  
+  .user-boxs label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #454545;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .user-boxs input:focus ~ label,
+  .user-boxs input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
+
+.buscador{
+  width: 50vw;
+  padding: 10px;
+  outline: none;
+  border: 5px solid #CCD1E4;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-left: 450px;
+}
+
+.secciontec{
+  display: flex;
+  flex-direction: initial;
+}
+
+#listaArticulos{
+  font-size: 30px;
+  margin-top: 20px;
+  list-style: none;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+li{
+  margin: 5px 0;
+}
+
+.filtro{
+  display: none;
+}
+
+.registrarse{
+  text-decoration: none;
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease;
+  color: #063b4d;
+  font-size: 20px;
+}
+
+.registrarse:hover {
+  color: #5dc8d0;
+  text-decoration: none;
+}
+
+.btncolor{
+  background-color: #063b4d;
+}
+ 
